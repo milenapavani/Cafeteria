@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<style>
+			p{
+				background-color:#999;
+				padding: 5px;
+				
+			}
+		</style>
+		<script src="./js/jquery.min.js"></script> 
+		
+		
+		<script>
+			$(function(){
+				alert("Xabláu!"); //mensagem topo da tela
+				
+				//$("#intro").hide(); // ao clicar ok no alerta o texto some(apaga)
+				
+				/*$("#intro").click(function(){
+					$(this).hide(); //apaga o objeto ao clicar... this é o elemento citado antes(intro)
+				});*/
+				
+				/*$("#esconder").click(function(){
+					$("#intro").hide(2000, function(){ //apaga o objeto ao clicar... 2000 são milisegundos ou seja 2 segundos 
+						alert("Olá!"); 
+					});
+				});
+				$("#mostrar").click(function(){
+					$("#intro").show("slow"); //mostra o objeto ao clicar... slow=devagar
+				});
+				$("#alternar").click(function(){
+					$("#intro").toggle("fast"); //apago o objeto ao clicar se estiver aparecendo ou mostra se estiver apagado... fast=rapido
+				});*/
+				
+				$("#esconder").click(function(){
+					$("#intro").slideUp(2000, function(){ //apaga o objeto ao clicar... 2000 são milisegundos ou seja 2 segundos 
+						$(this).slideDown("fast"); 
+					});
+				});
+				$("#mostrar").click(function(){
+					$("#intro").fadeIn("slow"); //mostra o objeto ao clicar... slow=devagar
+				});
+				$("#alternar").click(function(){
+					$("#intro").fadeToggle("fast"); //apago o objeto ao clicar se estiver aparecendo ou mostra se estiver apagado... fast=rapido
+				});
+				$("esconderAte").click(function(){
+					$("#intro").fadeTo("slow", 0.5);
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<button id="esconder">Esconder</button>
+		<button id="mostrar">Mostrar</button>
+		<button id="alternar">Alternar</button>
+		<button id="esconderAte">Esconder ate...</button>
+		<p id="intro">
+		Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica 
+		e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido
+		pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem 
+		Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica,
+		permanecendo essencialmente inalterado. 
+		</p>
+	</body>
+</html>
+		
